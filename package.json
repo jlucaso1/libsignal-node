@@ -6,7 +6,8 @@
   "main": "lib/index.js",
   "type": "module",
   "scripts": {
-    "generate-proto": "pbjs -t static-module -o ./src/WhisperTextProtocol.js ./protos/WhisperTextProtocol.proto && pbts -o ./src/WhisperTextProtocol.d.ts ./src/WhisperTextProtocol.js"
+    "generate-proto": "pbjs -t static-module -o ./src/WhisperTextProtocol.js ./protos/WhisperTextProtocol.proto && pbts -o ./src/WhisperTextProtocol.d.ts ./src/WhisperTextProtocol.js",
+    "build": "bun run build.ts"
   },
   "keywords": [
     "signal",
@@ -20,7 +21,7 @@
     "protobufjs": "7.4.0"
   },
   "files": [
-    "lib/*"
+    "lib"
   ],
   "devDependencies": {
     "eslint": "6.0.1",
