@@ -1,6 +1,6 @@
 {
   "name": "@jlucaso/libsignal-node",
-  "version": "2.1.1",
+  "version": "2.1.2",
   "description": "Open Whisper Systems' libsignal for Javascript",
   "repository": "jlucaso1/libsignal-node",
   "main": "lib/index.js",
