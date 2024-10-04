@@ -1,8 +1,8 @@
-import SessionRecord, { SessionEntry } from "./session_record";
+import { SessionEntry, SessionRecord } from "./session_record";
 import * as crypto from "./crypto";
 import * as curve from "./curve";
 import * as errors from "./errors";
-import * as protobufs from "./protobufs";
+import protobufs from "./protobufs";
 import queueJob from "./queue_job";
 import { ProtocolAddress } from "./protocol_address";
 import { assertBuffer, bytesToBase64 } from "./utils";
@@ -373,5 +373,3 @@ export class SessionCipher {
     });
   }
 }
-
-export default SessionCipher;

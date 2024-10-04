@@ -1,5 +1,3 @@
-import { textsecure } from "./WhisperTextProtocol";
+import proto from "./WhisperTextProtocol";
 
-const { WhisperMessage, PreKeyWhisperMessage } = textsecure;
-
-export { WhisperMessage, PreKeyWhisperMessage };
+export default proto.textsecure;

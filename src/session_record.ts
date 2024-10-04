@@ -350,5 +350,3 @@ export class SessionRecord {
     }
   }
 }
-
-export default SessionRecord;

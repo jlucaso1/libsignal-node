@@ -1,13 +1,13 @@
 {
   "name": "@jlucaso/libsignal-node",
-  "version": "2.1.2",
+  "version": "2.1.3",
   "description": "Open Whisper Systems' libsignal for Javascript",
   "repository": "jlucaso1/libsignal-node",
-  "main": "lib/index.js",
   "type": "module",
   "scripts": {
     "generate-proto": "pbjs -t static-module -o ./src/WhisperTextProtocol.js ./protos/WhisperTextProtocol.proto && pbts -o ./src/WhisperTextProtocol.d.ts ./src/WhisperTextProtocol.js",
-    "build": "bun run build.ts"
+    "build": "tsc && cp ./src/*.d.ts ./lib",
+    "lint": "eslint src"
   },
   "keywords": [
     "signal",
@@ -23,6 +23,13 @@
   "files": [
     "lib"
   ],
+  "exports": {
+    ".": "./lib/index.js",
+    "./crypto": "./lib/crypto.js",
+    "./curve": "./lib/curve.js",
+    "./errors": "./lib/errors.js",
+    "./protobufs": "./lib/WhisperTextProtocol.js"
+  },
   "devDependencies": {
     "eslint": "6.0.1",
     "protobufjs-cli": "^1.1.3",
