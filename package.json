@@ -3,7 +3,13 @@
   "version": "2.0.1",
   "description": "Open Whisper Systems' libsignal for Node.js",
   "repository": "WhiskeySockets/libsignal-node",
-  "main": "index.js",
+  "type": "module",
+  "main": "lib/index.js",
+  "scripts": {
+    "generate-proto": "pbjs -w es6 --es6 -t static-module -o ./src/WhisperTextProtocol.js ./protos/WhisperTextProtocol.proto && pbts -o ./src/WhisperTextProtocol.d.ts ./src/WhisperTextProtocol.js",
+    "copy-whisper": "cp src/WhisperTextProtocol.js lib/",
+    "build": "tsc && npm run copy-whisper"
+  },
   "keywords": [
     "signal",
     "whispersystems",
@@ -12,12 +18,14 @@
   "license": "GPL-3.0",
   "dependencies": {
     "curve25519-js": "^0.0.4",
-    "protobufjs": "6.8.8"
+    "protobufjs": "7.5.0"
   },
   "files": [
-    "src/*"
+    "lib/*"
   ],
   "devDependencies": {
-    "eslint": "6.0.1"
+    "eslint": "6.0.1",
+    "protobufjs-cli": "^1.2.0",
+    "typescript": "^5.8.3"
   }
 }
